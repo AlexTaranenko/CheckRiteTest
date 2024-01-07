@@ -13,6 +13,7 @@
 #import <SVProgressHUD/SVProgressHUD.h>
 #import "MainTableViewCell.h"
 #import "CatModel.h"
+#import "UIViewController+Alert.h"
 
 @interface MainViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -68,7 +69,7 @@
             });
         } else {
             dispatch_async(dispatch_get_main_queue(), ^{
-                [strongSelf showAlert:errorMsg];
+                [strongSelf showAlertWithTitle:@"Error" withMessage:errorMsg];
                 [strongSelf.refreshControl endRefreshing];
             });
         }
@@ -80,13 +81,6 @@
 - (void)refreshTable {
     [self.refreshControl beginRefreshing];
     [self loadCats];
-}
-
-- (void)showAlert: (NSString *)message {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error" message:message preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
-    [alert addAction:action];
-    [self presentViewController:alert animated:true completion:nil];
 }
 
 #pragma mark - UITableViewDataSource, UITableViewDelegate

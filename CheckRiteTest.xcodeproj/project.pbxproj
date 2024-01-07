@@ -25,6 +25,9 @@
 		1FD877222B49C614003DB7F7 /* MainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD877202B49C614003DB7F7 /* MainTableViewCell.m */; };
 		1FD877232B49C614003DB7F7 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FD877212B49C614003DB7F7 /* MainTableViewCell.xib */; };
 		1FD877282B4AA8C8003DB7F7 /* CatCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD877272B4AA8C8003DB7F7 /* CatCategory.m */; };
+		1FD877312B4AE998003DB7F7 /* CatBreed.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD877302B4AE998003DB7F7 /* CatBreed.m */; };
+		1FD877352B4AEEBF003DB7F7 /* UIImageView+LoadImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD877342B4AEEBF003DB7F7 /* UIImageView+LoadImage.m */; };
+		1FD877392B4AF53C003DB7F7 /* UIViewController+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD877382B4AF53C003DB7F7 /* UIViewController+Alert.m */; };
 		F250B7A34AA33AA3E09379C7 /* Pods_CheckRiteTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D14BB0149E26262B3AAFC2D7 /* Pods_CheckRiteTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +63,12 @@
 		1FD877212B49C614003DB7F7 /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
 		1FD877262B4AA8C8003DB7F7 /* CatCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CatCategory.h; sourceTree = "<group>"; };
 		1FD877272B4AA8C8003DB7F7 /* CatCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CatCategory.m; sourceTree = "<group>"; };
+		1FD8772F2B4AE998003DB7F7 /* CatBreed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CatBreed.h; sourceTree = "<group>"; };
+		1FD877302B4AE998003DB7F7 /* CatBreed.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CatBreed.m; sourceTree = "<group>"; };
+		1FD877332B4AEEBF003DB7F7 /* UIImageView+LoadImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+LoadImage.h"; sourceTree = "<group>"; };
+		1FD877342B4AEEBF003DB7F7 /* UIImageView+LoadImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+LoadImage.m"; sourceTree = "<group>"; };
+		1FD877372B4AF53C003DB7F7 /* UIViewController+Alert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Alert.h"; sourceTree = "<group>"; };
+		1FD877382B4AF53C003DB7F7 /* UIViewController+Alert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Alert.m"; sourceTree = "<group>"; };
 		4490C3209F5C528742C453F4 /* Pods-CheckRiteTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckRiteTest.debug.xcconfig"; path = "Target Support Files/Pods-CheckRiteTest/Pods-CheckRiteTest.debug.xcconfig"; sourceTree = "<group>"; };
 		930F66E8196E24AB31B392F1 /* Pods-CheckRiteTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckRiteTest.release.xcconfig"; path = "Target Support Files/Pods-CheckRiteTest/Pods-CheckRiteTest.release.xcconfig"; sourceTree = "<group>"; };
 		D14BB0149E26262B3AAFC2D7 /* Pods_CheckRiteTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheckRiteTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,6 +149,8 @@
 		1FD877022B489B04003DB7F7 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				1FD877362B4AF520003DB7F7 /* Alert */,
+				1FD877322B4AEEA1003DB7F7 /* LoadImage */,
 				1FD877292B4AB721003DB7F7 /* Storyboard */,
 			);
 			path = Categories;
@@ -169,6 +180,7 @@
 		1FD877192B49B3C4003DB7F7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1FD8772E2B4AE986003DB7F7 /* CatBreed */,
 				1FD877252B4AA863003DB7F7 /* CatCategory */,
 				1FD877242B4AA856003DB7F7 /* Cat */,
 			);
@@ -218,6 +230,33 @@
 				1FD877042B489B7C003DB7F7 /* UIViewController+Storyboard.m */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		1FD8772E2B4AE986003DB7F7 /* CatBreed */ = {
+			isa = PBXGroup;
+			children = (
+				1FD8772F2B4AE998003DB7F7 /* CatBreed.h */,
+				1FD877302B4AE998003DB7F7 /* CatBreed.m */,
+			);
+			path = CatBreed;
+			sourceTree = "<group>";
+		};
+		1FD877322B4AEEA1003DB7F7 /* LoadImage */ = {
+			isa = PBXGroup;
+			children = (
+				1FD877332B4AEEBF003DB7F7 /* UIImageView+LoadImage.h */,
+				1FD877342B4AEEBF003DB7F7 /* UIImageView+LoadImage.m */,
+			);
+			path = LoadImage;
+			sourceTree = "<group>";
+		};
+		1FD877362B4AF520003DB7F7 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				1FD877372B4AF53C003DB7F7 /* UIViewController+Alert.h */,
+				1FD877382B4AF53C003DB7F7 /* UIViewController+Alert.m */,
+			);
+			path = Alert;
 			sourceTree = "<group>";
 		};
 		637E5B1A4AF85B13EFD587F5 /* Pods */ = {
@@ -354,7 +393,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FD877142B495232003DB7F7 /* DetailsViewModel.m in Sources */,
+				1FD877312B4AE998003DB7F7 /* CatBreed.m in Sources */,
 				1FD876FA2B48988A003DB7F7 /* main.m in Sources */,
+				1FD877392B4AF53C003DB7F7 /* UIViewController+Alert.m in Sources */,
 				1FD876F22B489887003DB7F7 /* CheckRiteTest.xcdatamodeld in Sources */,
 				1FD877082B48A080003DB7F7 /* MainViewModel.m in Sources */,
 				1FD877052B489B7D003DB7F7 /* UIViewController+Storyboard.m in Sources */,
@@ -364,6 +405,7 @@
 				1FD876EC2B489887003DB7F7 /* MainViewController.m in Sources */,
 				1FD876E62B489887003DB7F7 /* AppDelegate.m in Sources */,
 				1FD877182B49A5E0003DB7F7 /* ConnectionManager.m in Sources */,
+				1FD877352B4AEEBF003DB7F7 /* UIImageView+LoadImage.m in Sources */,
 				1FD876E92B489887003DB7F7 /* SceneDelegate.m in Sources */,
 				1FD8770E2B494C00003DB7F7 /* DetailsViewController.m in Sources */,
 			);

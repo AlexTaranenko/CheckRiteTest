@@ -7,7 +7,9 @@
 
 #import "DetailsViewController.h"
 #import "UIViewController+Storyboard.h"
-#import <SDWebImage/SDWebImage.h>
+#import "UIImageView+LoadImage.h"
+#import <SVProgressHUD/SVProgressHUD.h>
+#import "UIViewController+Alert.h"
 
 @interface DetailsViewController ()
 
@@ -25,33 +27,45 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self loadPhotoImage];
-    [self loadCategoryName];
+    self.categoryLabel.text = @"";
+    [self loadDetailCat];
+}
+
+- (void)loadDetailCat {
+    [SVProgressHUD show];
+    
+    __weak __typeof(self) weakSelf = self;
+    [self.detailsViewModel loadDetailCatWithCompletionBlock:^(BOOL succeeded, NSString * _Nonnull errorMsg) {
+        __strong __typeof(weakSelf) strongSelf = weakSelf;
+        
+        if (succeeded) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [strongSelf loadPhotoImage];
+                [strongSelf loadInfoCat];
+            });
+        } else {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [strongSelf showAlertWithTitle:@"Error" withMessage:errorMsg];
+            });
+        }
+        
+        [SVProgressHUD dismiss];
+    }];
 }
 
 #pragma mark - Photo Image
 
 - (void)loadPhotoImage {
-    self.photoImageView.sd_imageIndicator = SDWebImageActivityIndicator.grayLargeIndicator;
+    
     [self.photoImageView setContentMode:UIViewContentModeScaleAspectFill];
     [self.photoImageView.layer setCornerRadius:8];
-    
-    __weak __typeof(self) weakSelf = self;
-    [self.photoImageView sd_setImageWithURL:self.detailsViewModel.imageUrl completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-        __strong __typeof(weakSelf) strongSelf = weakSelf;
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            [strongSelf.photoImageView setImage:image];
-        });
-    }];
+    [self.photoImageView loadImage:self.detailsViewModel.imageUrl];
 }
 
 #pragma mark - Category
 
-- (void)loadCategoryName {
-    [self.categoryLabel setHidden:self.detailsViewModel.categoryName == nil];
-    self.categoryLabel.text = [NSString stringWithFormat:@"Category: %@", self.detailsViewModel.categoryName];
+- (void)loadInfoCat {
+    self.categoryLabel.attributedText = [self.detailsViewModel infoCat];
 }
 
 @end

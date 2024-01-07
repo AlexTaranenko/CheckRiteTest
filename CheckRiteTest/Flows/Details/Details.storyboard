@@ -39,10 +39,10 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="awh-G2-l8d">
                                         <rect key="frame" x="0.0" y="330" width="361" height="429"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AGB-MZ-Sbw">
-                                                <rect key="frame" x="0.0" y="8" width="41.333333333333336" height="24"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AGB-MZ-Sbw">
+                                                <rect key="frame" x="0.0" y="8" width="361" height="24"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="24" id="rku-2t-IHv"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="rku-2t-IHv"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -51,6 +51,7 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="AGB-MZ-Sbw" secondAttribute="trailing" id="BxH-tB-em6"/>
                                             <constraint firstItem="AGB-MZ-Sbw" firstAttribute="leading" secondItem="awh-G2-l8d" secondAttribute="leading" id="Eye-hX-Utf"/>
                                             <constraint firstItem="AGB-MZ-Sbw" firstAttribute="top" secondItem="awh-G2-l8d" secondAttribute="top" constant="8" id="YPt-xR-0Bl"/>
                                         </constraints>

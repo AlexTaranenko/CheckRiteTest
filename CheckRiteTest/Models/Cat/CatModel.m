@@ -16,17 +16,37 @@
     obj.url = (NSString *)[dictionary objectForKey:@"url"];
     obj.width = [(NSNumber *)[dictionary objectForKey:@"width"] intValue];
     obj.height = [(NSNumber *)[dictionary objectForKey:@"height"] intValue];
+        
+    obj.categories = [self parseCategories:dictionary];
+    obj.breeds = [self parseBreeds:dictionary];
     
+    return obj;
+}
+
++ (NSArray *)parseCategories:(NSDictionary *)dictionary {
     NSArray *categories = (NSArray *)[dictionary objectForKey:@"categories"];
+    NSMutableArray *temp = [NSMutableArray new];
+    
     if (categories.count > 0) {
-        NSMutableArray *temp = [NSMutableArray new];
         for (NSDictionary *categoryDict in categories) {
             [temp addObject:[CatCategory initWithDictionary:categoryDict]];
         }
-        obj.categories = [temp mutableCopy];
     }
     
-    return obj;
+    return [temp mutableCopy];
+}
+
++ (NSArray *)parseBreeds:(NSDictionary *)dictionary {
+    NSArray *breeds = (NSArray *)[dictionary objectForKey:@"breeds"];
+    NSMutableArray *temp = [NSMutableArray new];
+    
+    if (breeds.count > 0) {
+        for (NSDictionary *breedDict in breeds) {
+            [temp addObject:[CatBreed initWithDictionary:breedDict]];
+        }
+    }
+
+    return [temp mutableCopy];
 }
 
 @end

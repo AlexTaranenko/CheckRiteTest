@@ -7,6 +7,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define API_KEY @"live_sjupe9dFm3mFNZRefzpapU5a3VGHegQtjmmEJl5uEICkoMB7j01BmNMQC0MatLM4"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ConnectionManager : NSObject

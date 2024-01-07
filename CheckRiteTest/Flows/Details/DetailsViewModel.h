@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "CatModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -14,9 +15,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithCatModel:(CatModel *)catModel;
 
-- (NSURL *)imageUrl;
+- (void)loadDetailCatWithCompletionBlock:(void (^)(BOOL succeeded, NSString* errorMsg))completionBlock;
 
-- (NSString *)categoryName;
+- (NSString *)imageUrl;
+
+- (NSAttributedString *)infoCat;
 
 @end
 

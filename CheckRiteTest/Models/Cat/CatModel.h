@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "CatCategory.h"
+#import "CatBreed.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic) int width;
 @property (assign, nonatomic) int height;
 @property (copy, nonatomic, nullable) NSArray* categories;
+@property (copy, nonatomic, nullable) NSArray* breeds;
 
 + (CatModel *)initWithDictionary: (NSDictionary *)dictionary;
 

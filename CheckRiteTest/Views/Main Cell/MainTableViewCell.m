@@ -6,8 +6,8 @@
 //
 
 #import "MainTableViewCell.h"
-#import <SDWebImage/SDWebImage.h>
-#import "CatCategory.h"
+#import "UIImageView+LoadImage.h"
+#import "CatBreed.h"
 
 @interface MainTableViewCell ()
 
@@ -44,21 +44,12 @@
 
 - (void)populateMainCell:(CatModel *)model {
     
-    [self.containerCategoryView setHidden:model.categories.count == 0];
-    if (model.categories.count > 0) {
-        self.categoryLabel.text = [(CatCategory *)model.categories.firstObject name];
+    [self.containerCategoryView setHidden:model.breeds.count == 0];
+    if (model.breeds.count > 0) {
+        self.categoryLabel.text = [[(CatBreed *)model.breeds.firstObject name] capitalizedString];
     }
     
-    self.photoImageView.sd_imageIndicator = SDWebImageActivityIndicator.grayIndicator;
-    
-    __weak __typeof(self) weakSelf = self;
-    [self.photoImageView sd_setImageWithURL:[NSURL URLWithString:model.url] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-        __strong __typeof(weakSelf) strongSelf = weakSelf;
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [strongSelf.photoImageView setImage:image];
-        });
-    }];
+    [self.photoImageView loadImage:model.url];
 }
 
 @end

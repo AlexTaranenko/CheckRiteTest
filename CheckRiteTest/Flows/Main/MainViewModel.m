@@ -10,7 +10,6 @@
 #import "CatModel.h"
 
 #define GET_CATS_URL @"https://api.thecatapi.com/v1/images/search?limit=10"
-#define API_KEY @"live_sjupe9dFm3mFNZRefzpapU5a3VGHegQtjmmEJl5uEICkoMB7j01BmNMQC0MatLM4"
 
 @implementation MainViewModel
 

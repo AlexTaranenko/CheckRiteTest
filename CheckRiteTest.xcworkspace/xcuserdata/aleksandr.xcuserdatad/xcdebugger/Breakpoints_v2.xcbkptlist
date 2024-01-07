@@ -3,4 +3,54 @@
    uuid = "1CD0C796-8D42-4182-8114-69F8BD2E5EF0"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4ADB028B-01BF-42F5-A0A8-78157EBE0120"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CheckRiteTest/Flows/Details/DetailsViewModel.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "-loadDetailCatWithCompletionBlock:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4ADB028B-01BF-42F5-A0A8-78157EBE0120 - eff5ed0ff2d6c788"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[DetailsViewModel loadDetailCat]"
+                  moduleName = "CheckRiteTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksandr/Documents/Projects/CheckRiteTest/CheckRiteTest/Flows/Details/DetailsViewModel.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "180">
+               </Location>
+               <Location
+                  uuid = "4ADB028B-01BF-42F5-A0A8-78157EBE0120 - ab799d247ff70872"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__33-[DetailsViewModel loadDetailCat]_block_invoke"
+                  moduleName = "CheckRiteTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksandr/Documents/Projects/CheckRiteTest/CheckRiteTest/Flows/Details/DetailsViewModel.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "100">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
